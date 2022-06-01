@@ -22,7 +22,7 @@ import com.java.model.Message;
 import com.java.service.FileService;
 
 @RestController
-@RequestMapping("api/upload/")
+@RequestMapping("api/upload")
 public class FileController{
 	private FileService fileService;
 	
@@ -86,7 +86,7 @@ public class FileController{
 		}
 	}
 	
-	@DeleteMapping("delete/{fileId}")
+	@DeleteMapping("/delete/{fileId}")
 	public ResponseEntity<?> delete(@PathVariable("fileId") long fileId){
 		fileService.deleteFileDB(fileId);
 		return new ResponseEntity<>(HttpStatus.OK);
