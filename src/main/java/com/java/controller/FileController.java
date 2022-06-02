@@ -86,7 +86,7 @@ public class FileController{
 		}
 	}
 	
-	@DeleteMapping("/delete/{fileId}")
+	@DeleteMapping("delete/{fileId}")
 	public ResponseEntity<?> delete(@PathVariable("fileId") long fileId){
 		fileService.deleteFileDB(fileId);
 		return new ResponseEntity<>(HttpStatus.OK);
